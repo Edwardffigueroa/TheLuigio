@@ -4,6 +4,11 @@ import Music.Notas;
 import Music.TimeLine;
 import TUIO.TuioObject;
 import TUIO.TuioProcessing;
+
+import Ui.Bg;
+import Ui.Circle;
+import Ui.MainG;
+import com.jogamp.common.util.InterruptSource;
 import ddf.minim.AudioBuffer;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
@@ -12,7 +17,9 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+
 public class Logica {
+
 	// Applet
 	private PApplet app;
 
@@ -25,7 +32,9 @@ public class Logica {
 	private ArrayList<Notas> notasArray;
 	private ArrayList<User> users;
 	private PImage img;
-	
+	private MainG ui;
+	private Circle circulo;
+	private Bg bg;
 	
 	private TimeLine timeLine;
 	
@@ -58,14 +67,27 @@ public class Logica {
 		poblar = false;
 		
 		//Start Ui Thread
-		
+		ui = new MainG(app);
+		circulo = new Circle(app);
+		bg = new Bg(app);
+
+		//Start Ui Thread
+		Thread nt = new Thread(ui);
+		nt.start();
 		
 	}
 
 	public void pintar() {
 
-
+		app.imageMode(PConstants.CORNER);
 		app.image(img, 0,0);
+
+		app.pushMatrix();
+		ui.paint();
+		bg.paint(timeLine.getOut().mix);
+		circulo.paint(timeLine.getOut().mix);
+		app.popMatrix();
+
 		react.pintar();
 		checkBlobs();
 		atrapar();

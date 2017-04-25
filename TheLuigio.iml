@@ -21,7 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library" exported="">
       <library name="core.jar">
         <CLASSES>
@@ -103,7 +103,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="gluegen-rt-natives-linux-amd64" level="project" />
-    <orderEntry type="library" name="library" level="project" />
+    <orderEntry type="library" exported="" name="gluegen-rt-natives-linux-amd64" level="project" />
+    <orderEntry type="library" exported="" name="library" level="project" />
   </component>
 </module>

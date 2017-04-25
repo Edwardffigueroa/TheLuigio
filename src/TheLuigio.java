@@ -1,4 +1,4 @@
-import codeanticode.syphon.SyphonServer;
+//import codeanticode.syphon.SyphonServer;
 import processing.core.PApplet;
 import processing.core.PFont;
 
@@ -12,7 +12,7 @@ public class TheLuigio extends PApplet {
 	
 	private Logica logica;
 
-	SyphonServer s;
+	//SyphonServer s;
 	//Metodos
 	
 	public void settings(){
@@ -20,7 +20,7 @@ public class TheLuigio extends PApplet {
 		System.out.println("Set Canvas Size");
 		//if you will run on eclipse delete P3D and comment next line
 		size(845, 720, P3D);
-		PJOGL.profile=1;
+	//	PJOGL.profile=1;
 	}
 	
 	@Override
@@ -35,7 +35,7 @@ public class TheLuigio extends PApplet {
 		  noCursor();
 
 		//if you will run on eclipse comment line below
-		s = new SyphonServer(this, "Processing Syphon");
+	//	s = new SyphonServer(this, "Processing Syphon");
 		    	  
 	}
 	
@@ -45,7 +45,7 @@ public class TheLuigio extends PApplet {
 		 background(0);
 		logica.pintar();
 		//if you will run on eclipse comment line below
-		s.sendScreen();
+		//s.sendScreen();
 	
 	}
 	
